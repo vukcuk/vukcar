@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import ArtworkImageStripe from "@/components/ArtworkImageStripe.astro";
+
+const allArtworkPosts = await getCollection("artwork");
+---
+<BaseLayout title="Home">
+  <section class="w-full">
+    <div class="flex flex-col w-full">
+      {allArtworkPosts.map(post => {
+      const link = `artwork/${post.data.slug}`;
+      return (
+      <a href={link}>
+        <div class="w-full m-0 p-5">
+          <h3 class="uppercase text-left text-6xl font-bold">{post.data.title}</h3>
+          <p class="text-gray-500 text-left text-sm">{post.data.subtitle}</p>
+        </div>
+      </a>
+      <ArtworkImageStripe folderName={post.data.slug} link={link}/>
+      )})}
+    </div>
+  </section>
+</BaseLayout>

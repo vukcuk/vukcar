@@ -1,0 +1,46 @@
+{
+  "name": "@area44/astro-shadcn-ui-template",
+  "version": "25.01.27",
+  "description": "An Astro template for building apps.",
+  "neverBuiltDependencies": [],
+  "author": {
+    "name": "AREA44"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "start": "astro dev",
+    "format": "biome format --write ."
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.2.4",
+    "@iconify-json/mdi": "^1.2.3",
+    "@radix-ui/react-icons": "^1.3.2",
+    "@radix-ui/react-slot": "^1.2.0",
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.4",
+    "astro-icon": "^1.1.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "photoswipe": "^5.4.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sharp": "^0.34.1",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.4",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.14.1",
+    "@types/photoswipe": "^4.1.6",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "pnpm@10.8.1"
+}

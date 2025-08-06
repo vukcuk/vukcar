@@ -1,0 +1,129 @@
+---
+// ArtworkImageStripe.astro
+import type { ImageMetadata } from "astro";
+import { getImage } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+folderName: string;
+link: string;
+}
+
+const { folderName, link } = Astro.props;
+
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
+["/src/artwork/*/*.jpg", "/src/artwork/*/*.png"]
+);
+
+const imagePaths = Object.keys(allImages).filter((path) =>
+path.startsWith(`/src/artwork/${folderName}/`)
+);
+
+const images = await Promise.all(
+imagePaths.map(async (path) => {
+const imported = await allImages[path]();
+const optimized = await getImage({
+src: imported.default,
+height: 350,
+});
+return {
+src: optimized.src,
+width: optimized.attributes.width,
+height: optimized.attributes.height,
+alt: path.split("/").pop() || "image",
+};
+})
+);
+---
+
+<style>
+ .scroll-wrapper {
+   width: 100%;
+ }
+
+ .scroll-container {
+   display: flex;
+   overflow-x: auto;
+   scroll-behavior: smooth;
+   -webkit-overflow-scrolling: touch;
+   height: 350px;
+   scrollbar-width: none;
+ }
+
+ .scroll-container::-webkit-scrollbar {
+   display: none;
+ }
+
+ .scroll-container img {
+   height: 100%;
+   object-fit: cover;
+   flex-shrink: 0;
+   transition: transform 0.3s ease;
+ }
+
+ .button-row {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 0.5rem;
+ }
+
+ .scroll-button {
+   background: none;
+   border: none;
+   color: #111;
+   padding: 0 0.5rem;
+   user-select: none;
+   transition: color 0.2s ease;
+   font-size: 2rem; /* <-- Bigger font size */
+   font-family: var(--font-sans);
+   display: flex;
+   align-items: center;
+ }
+
+ .scroll-button:hover {
+   color: #555;
+   color: var(--color-muted-foreground); /* or #555 */
+ }
+
+</style>
+
+<div class="scroll-wrapper">
+  <a href={link}>
+    <div class="scroll-container" id={`stripe-${folderName}`}>
+      {
+      (() => {
+      const totalWidth = images.reduce((sum, img) => sum + img.width, 0);
+      return images.map((img) => {
+      const flexGrow = img.width / totalWidth;
+      return (
+      <img
+        src={img.src}
+        alt={img.alt}
+        style={{ flexGrow }}
+        loading="lazy"
+      />
+      );
+      });
+      })()
+      }
+    </div>
+  </a>
+
+  <div class="button-row">
+    <button class="scroll-button" onclick={`scrollStripe('${folderName}', 'left')`}><Icon name="mdi:chevron-left" /></button>
+    <button class="scroll-button" onclick={`scrollStripe('${folderName}', 'right')`}><Icon name="mdi:chevron-right" /></button>
+  </div>
+</div>
+
+<!-- ✅ Place the script right here at the bottom -->
+<script is:global>
+ function scrollStripe(folderName, direction) {
+   const container = document.getElementById(`stripe-${folderName}`);
+   if (!container) return;
+   const scrollAmount = container.clientWidth * 0.8;
+   container.scrollBy({
+     left: direction === "left" ? -scrollAmount : scrollAmount,
+     behavior: "smooth"
+   });
+ }
+</script>

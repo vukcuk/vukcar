@@ -1,0 +1,40 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import { socialLinks } from "@/config/social";
+import { Icon } from "astro-icon/components";
+---
+
+<header
+  class="bg-background/95 supports-[backdrop-filter]:bg-background/60 top-0 z-50 w-full backdrop-blur"
+>
+  <div
+    class="flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0 p-5"
+  >
+    <div class="flex gap-6 md:gap-10">
+      <a href="/" class="flex items-center space-x-2">
+        <span class="inline-block font-bold">VUKCUK</span>
+      </a>
+    </div>
+    <div class="flex flex-1 items-center justify-end space-x-4">
+      <nav class="flex items-center space-x-1">
+        <a
+          href="/about"
+          class={buttonVariants({ variant: 'social' })}
+        >
+          About
+        </a>
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={buttonVariants({ variant: 'social', size: 'icon', })}
+            aria-label={link.name}
+          >
+            <Icon name={link.icon} class="w-5 h-5" />
+          </a>
+        ))}
+      </nav>
+    </div>
+  </div>
+</header>

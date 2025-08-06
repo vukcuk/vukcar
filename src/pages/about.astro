@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import AboutContent, {frontmatter} from "@/content/about.md";
+
+---
+<BaseLayout title={frontmatter.title}>
+  <section class="w-full"> <!-- Removed container to allow full width -->
+    <div class="flex flex-col w-full"> <!-- Make flex direction column -->
+
+      <div class="w-full m-0 p-5">
+        <h3 class="uppercase text-left text-6xl font-bold">{frontmatter.title}</h3>
+        <article class="prose max-w-4xl py-8">
+          <AboutContent />
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

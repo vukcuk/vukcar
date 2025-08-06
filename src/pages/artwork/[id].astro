@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ImageGallery from "@/components/ImageGallery.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+const posts = await getCollection("artwork");
+return posts.map((post) => ({
+params: { id: post.id },
+props: { post },
+}));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const postDir = `artwork/${post.id}`;
+---
+<BaseLayout title={post.data.title}>
+  <section class="w-full"> <!-- Removed container to allow full width -->
+    <div class="flex flex-col w-full"> <!-- Make flex direction column -->
+
+      <div class="w-full m-0 p-5">
+        <h3 class="uppercase text-left text-6xl font-bold">{post.data.title}</h3>
+        <p class="text-gray-500 text-left text-sm">{post.data.subtitle}</p>
+        <article class="prose max-w-full lg:max-w-2xl py-8 w-full lg:w-1/2">
+          <Content />
+        </article>
+        <ImageGallery imageFolder={postDir} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
