@@ -10,8 +10,8 @@ const artwork = defineCollection({
   schema: z.object({
     title: z.string(),
     slug: z.string(),
-    subtitle: z.string(),
-    description: z.string(),
+    subtitle: z.string().optional(),
+    description: z.string().optional(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
   }),

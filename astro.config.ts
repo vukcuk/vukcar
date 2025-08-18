@@ -6,7 +6,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.CI ? "https://mengesh.github.io" : "http://localhost:4321",
+  site: process.env.CI ? "https://vukcuk.com" : "http://localhost:4321",
   integrations: [react(), icon()],
   vite: {
     plugins: [tailwindcss()],

@@ -12,7 +12,14 @@ link: string;
 const { folderName, link } = Astro.props;
 
 const allImages = import.meta.glob<{ default: ImageMetadata }>(
-["/src/artwork/*/*.jpg", "/src/artwork/*/*.png"]
+[
+"/src/artwork/*/*.jpg",
+"/src/artwork/*/*.png",
+"/src/artwork/*/*.JPG",
+"/src/artwork/*/*.PNG",
+"/src/artwork/*/*.jpeg",
+"/src/artwork/*/*.JPEG"
+]
 );
 
 const imagePaths = Object.keys(allImages).filter((path) =>
@@ -55,10 +62,11 @@ alt: path.split("/").pop() || "image",
  }
 
  .scroll-container img {
-   height: 100%;
    object-fit: cover;
    flex-shrink: 0;
    transition: transform 0.3s ease;
+   height: 100%;
+   width: auto; /* Ensures proportional scaling */
  }
 
  .button-row {
@@ -94,12 +102,10 @@ alt: path.split("/").pop() || "image",
       (() => {
       const totalWidth = images.reduce((sum, img) => sum + img.width, 0);
       return images.map((img) => {
-      const flexGrow = img.width / totalWidth;
       return (
       <img
         src={img.src}
         alt={img.alt}
-        style={{ flexGrow }}
         loading="lazy"
       />
       );

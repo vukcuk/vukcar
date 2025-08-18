@@ -3,7 +3,9 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import ArtworkImageStripe from "@/components/ArtworkImageStripe.astro";
 
-const allArtworkPosts = await getCollection("artwork");
+const allArtworkPosts = (await getCollection("artwork")).sort(
+(a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
+);
 ---
 <BaseLayout title="Home">
   <section class="w-full">
@@ -14,7 +16,6 @@ const allArtworkPosts = await getCollection("artwork");
       <a href={link}>
         <div class="w-full m-0 p-5">
           <h3 class="uppercase text-left text-6xl font-bold">{post.data.title}</h3>
-          <p class="text-gray-500 text-left text-sm">{post.data.subtitle}</p>
         </div>
       </a>
       <ArtworkImageStripe folderName={post.data.slug} link={link}/>
