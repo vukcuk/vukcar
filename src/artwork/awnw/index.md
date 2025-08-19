@@ -1,5 +1,5 @@
 ---
-title: "A WHOLE NEW WORLD 2"
+title: "A WHOLE NEW WORLD"
 slug: "awnw"
 subtitle: Ravnikar gallery Space 
 pubDate: 2019-11-01
