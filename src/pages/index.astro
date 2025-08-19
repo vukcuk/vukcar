@@ -15,7 +15,8 @@ const allArtworkPosts = (await getCollection("artwork")).sort(
       return (
       <a href={link}>
         <div class="w-full m-0 p-5">
-          <h3 class="uppercase text-left text-6xl font-bold">{post.data.title}</h3>
+          <h3 class="uppercase text-left text-4xl sm:text-5xl lg:text-6xl font-bold">
+            {post.data.title}</h3>
         </div>
       </a>
       <ArtworkImageStripe folderName={post.data.slug} link={link}/>
