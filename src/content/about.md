@@ -2,8 +2,6 @@
 title: About me
 ---
 
-# Vuk Ćuk
-
 Vuk Ćuk (1987) is a visual artist based in Belgrade, Serbia. He is interested in how capitalist logic, trends, and technology shape both the human and natural world, examining new ways of living in contemporary society. He works across various media, such as sculpture (kinetic and static), installations, drawing, digital art, video, and painting.
 
 His work has been exhibited at:
@@ -90,7 +88,7 @@ He is also a **Contributing Art Editor** at *DSCENE Magazine*.
 
 ---
 
-## Group Shows
+## GROUP SHOWS
 
 *(Selected)*
 
@@ -137,7 +135,7 @@ He is also a **Contributing Art Editor** at *DSCENE Magazine*.
 
 ---
 
-## Residencies
+## RESIDENCIES
 
 - **2025**: D’PUGLIA, CASTRO, ITALY; WATERMELON RESIDENCY, ROMANIA  
 - **2019**: Serbian Pavilion Residency, Venice; Ečka Symposium, Serbia  
@@ -146,7 +144,7 @@ He is also a **Contributing Art Editor** at *DSCENE Magazine*.
 
 ---
 
-## Awards
+## AWARDS
 
 - Recognition Award, MAK Museum, Vienna  
 - Award for Drawing, Vladimir Velickovic Fund  
@@ -155,7 +153,7 @@ He is also a **Contributing Art Editor** at *DSCENE Magazine*.
 
 ---
 
-## Collections
+## COLLECTIONS
 
 - National Library, Krusevac, Serbia  
 - Cultural Center of Pancevo, Serbia  
@@ -166,7 +164,7 @@ He is also a **Contributing Art Editor** at *DSCENE Magazine*.
 
 ---
 
-## Public Commissions
+## PUBLIC COMMISSIONS
 
 - **2019**: 10 objects, National Library, Krusevac  
 - **2017**: Stained glass, National Museum, Krusevac  
