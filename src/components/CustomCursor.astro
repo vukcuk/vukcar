@@ -18,13 +18,41 @@
    background-size: contain;
    pointer-events: none; /* Let clicks go through */
    z-index: 2147483647;
-   transform: translate(-50%, -50%);
+   transform: translate(-100%, -50%);
  }
 </style>
 
 <script type="module" client:load>
  const cursor = document.getElementById('custom-cursor');
+ let lastX = null;
+ let lastY = null;
+ let idleTimeout = null;
+ const idleDelay = 150; // ms after which cursor resets to vertical
+
  document.addEventListener('mousemove', (e) => {
-   cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+   const currentX = e.clientX;
+   const currentY = e.clientY;
+
+   if (lastX !== null && lastY !== null) {
+     const deltaX = currentX - lastX;
+     const deltaY = currentY - lastY;
+
+     const angleRad = Math.atan2(deltaY, deltaX);
+     const angleDeg = angleRad * (180 / Math.PI) + 90; // top points to movement
+
+     cursor.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${angleDeg}deg)`;
+   } else {
+     // First move, no angle yet
+     cursor.style.transform = `translate(${currentX}px, ${currentY}px) rotate(0deg)`;
+   }
+
+   // Reset the idle timer
+   clearTimeout(idleTimeout);
+   idleTimeout = setTimeout(() => {
+     cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) rotate(0deg)`; // Vertical reset
+   }, idleDelay);
+
+   lastX = currentX;
+   lastY = currentY;
  });
 </script>
