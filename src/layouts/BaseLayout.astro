@@ -2,6 +2,7 @@
 import HeadSEO from "@/components/HeadSEO.astro";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
+import CustomCursor from "@/components/CustomCursor.astro";
 
 interface Props {
 title?: string | undefined;
@@ -22,6 +23,7 @@ const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     <link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro" rel="stylesheet">    
   </head>
   <body class="bg-background min-h-screen font-sans antialiased">
+    <CustomCursor />
     <div class="relative flex min-h-screen flex-col">
       <Header />
       <main class="flex-auto">

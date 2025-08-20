@@ -1,0 +1,30 @@
+---
+---
+<div id="custom-cursor" class="custom-cursor" />
+
+<style>
+ /* Hide default cursor */
+ body {
+   cursor: none;
+ }
+
+ .custom-cursor {
+   position: fixed;
+   top: 0;
+   left: -64px;
+   width: 128px; /* Set your cursor size */
+   height: 128px;
+   background: url('/cursor.cur') no-repeat center center;
+   background-size: contain;
+   pointer-events: none; /* Let clicks go through */
+   z-index: 9999;
+   transform: translate(-50%, -50%);
+ }
+</style>
+
+<script type="module" client:load>
+ const cursor = document.getElementById('custom-cursor');
+ document.addEventListener('mousemove', (e) => {
+   cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+ });
+</script>
