@@ -1,58 +1,71 @@
----
----
-<div id="custom-cursor" class="custom-cursor" />
-
 <style>
- /* Hide default cursor */
+ /* Hide the native cursor */
  body {
    cursor: none;
+   margin: 0;
+   height: 100vh;
+   background: #f0f0f0;
  }
 
- .custom-cursor {
+ /* Custom cursor styles */
+ #custom-cursor {
    position: fixed;
    top: 0;
    left: -64px;
-   width: 128px; /* Set your cursor size */
+   width: 128px;
    height: 128px;
    background: url('/cursor.png') no-repeat center center;
    background-size: contain;
-   pointer-events: none; /* Let clicks go through */
+   pointer-events: none;
+   transform-origin: top center;
    z-index: 2147483647;
-   transform: translate(-100%, -50%);
+   /* No CSS transition here - movement smoothed by JS */
  }
 </style>
 
-<script type="module" client:load>
+<div id="custom-cursor"></div>
+
+<script>
  const cursor = document.getElementById('custom-cursor');
- let lastX = null;
- let lastY = null;
- let idleTimeout = null;
- const idleDelay = 150; // ms after which cursor resets to vertical
+
+ let lastX = window.innerWidth / 2;
+ let lastY = window.innerHeight / 2;
+ let targetX = lastX;
+ let targetY = lastY;
+ let rotation = 0;
+ const movementThreshold = 5;
+ const lerpFactor = 0.3;
+
+ // Initialize cursor position to center (optional)
+ cursor.style.transform = `translate(${lastX}px, ${lastY}px) rotate(0deg)`;
 
  document.addEventListener('mousemove', (e) => {
-   const currentX = e.clientX;
-   const currentY = e.clientY;
+   targetX = e.clientX;
+   targetY = e.clientY;
 
-   if (lastX !== null && lastY !== null) {
-     const deltaX = currentX - lastX;
-     const deltaY = currentY - lastY;
+   const deltaX = targetX - lastX;
+   const deltaY = targetY - lastY;
+   const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
+   if (distance >= movementThreshold) {
      const angleRad = Math.atan2(deltaY, deltaX);
-     const angleDeg = angleRad * (180 / Math.PI) + 90; // top points to movement
-
-     cursor.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${angleDeg}deg)`;
-   } else {
-     // First move, no angle yet
-     cursor.style.transform = `translate(${currentX}px, ${currentY}px) rotate(0deg)`;
+     rotation = angleRad * (180 / Math.PI) + 90;
    }
-
-   // Reset the idle timer
-   clearTimeout(idleTimeout);
-   idleTimeout = setTimeout(() => {
-     cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) rotate(0deg)`; // Vertical reset
-   }, idleDelay);
-
-   lastX = currentX;
-   lastY = currentY;
  });
+
+ function animate() {
+   // Smoothly interpolate position
+   lastX += (targetX - lastX) * lerpFactor;
+   lastY += (targetY - lastY) * lerpFactor;
+
+   // Apply transform with current rotation
+   cursor.style.transform = `translate(${lastX}px, ${lastY}px) rotate(${rotation}deg)`;
+
+   requestAnimationFrame(animate);
+ }
+
+ animate();
 </script>
+
+</body>
+</html>
