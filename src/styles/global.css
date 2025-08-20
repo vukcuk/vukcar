@@ -185,6 +185,6 @@
 }
 
 .prose h2 {
-  @apply text-base font-bold tracking-tight h-16;
-  line-height: 4rem; /* Matches h-16 (height: 4rem) if needed */
+    @apply uppercase text-left text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight;
+    @apply mb-8 mt-16; /* Less space below and no space above */
 }
