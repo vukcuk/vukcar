@@ -36,6 +36,22 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Cache Astro Image Optimizations
+        uses: actions/cache@v4
+        with:
+          path: |
+            .astro
+          key: astro-assets-${{ hashFiles(
+            'src/artwork/**/*.jpg',
+            'src/artwork/**/*.jpeg',
+            'src/artwork/**/*.png',
+            'src/artwork/**/*.JPG',
+            'src/artwork/**/*.JPEG',
+            'src/artwork/**/*.PNG'
+            ) }}            
+          restore-keys: |
+            astro-assets-
+
       - name: Build with Astro
         run: pnpm build
    
