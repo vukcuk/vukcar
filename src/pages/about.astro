@@ -10,11 +10,11 @@ import AboutContent, {frontmatter} from "@/content/about.md";
       <div class="w-full m-0 p-5">
         {frontmatter.title ?
         <h3 class="uppercase text-left text-6xl font-bold">{frontmatter.title}</h3>
-        <article class="prose max-w-4xl py-8">
+        <article class="prose max-w-4xl py-8 text-justify">
           <AboutContent />
         </article>
         :
-        <article class="prose max-w-4xl">
+        <article class="prose max-w-4xl text-justify">
           <AboutContent />
         </article>
         }
