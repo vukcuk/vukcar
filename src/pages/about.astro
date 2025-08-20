@@ -8,10 +8,16 @@ import AboutContent, {frontmatter} from "@/content/about.md";
     <div class="flex flex-col w-full"> <!-- Make flex direction column -->
 
       <div class="w-full m-0 p-5">
+        {frontmatter.title ?
         <h3 class="uppercase text-left text-6xl font-bold">{frontmatter.title}</h3>
         <article class="prose max-w-4xl py-8">
           <AboutContent />
         </article>
+        :
+        <article class="prose max-w-4xl">
+          <AboutContent />
+        </article>
+        }
       </div>
     </div>
   </section>

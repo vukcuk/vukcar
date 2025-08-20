@@ -183,3 +183,8 @@
         cursor: none;
     }
 }
+
+.prose h2 {
+  @apply text-base font-bold tracking-tight h-16;
+  line-height: 4rem; /* Matches h-16 (height: 4rem) if needed */
+}
