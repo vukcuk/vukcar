@@ -179,8 +179,7 @@
     .pswp__zoom-wrap,
     .pswp__img
     {
-        /* cursor: url("/cursor.cur") 0 0, auto !important; */
-        cursor: none;
+        cursor: none !important;
     }
 }
 
