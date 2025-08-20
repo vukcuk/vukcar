@@ -1,43 +1,32 @@
 ---
-title: About me
+title: ""
 ---
 
-Vuk Ćuk (1987) is a visual artist based in Belgrade, Serbia. He is interested in how capitalist logic, trends, and technology shape both the human and natural world, examining new ways of living in contemporary society. He works across various media, such as sculpture (kinetic and static), installations, drawing, digital art, video, and painting.
-
-His work has been exhibited at:
-- **NADA Miami 2024**
-- **Armory Show 2023**
-- **LISTE Art Fair 2022**
-- **Belgrade Biennale 2021** – curated by CURA’s Ilaria Marotta and Andrea Baccin
-- **Sequence Art Festival**, Marshall House, Reykjavik, Iceland (2019)
-- **57th Belgrade Biennale** – curated by Gunnar and Danielle Kvaran (2018)
-- **China Art Museum**, Shanghai (2017)
-- **Sugarcube Festival**, New York (2016)
-- **Taiyuan Sculpture Symposium**, Taiyuan, China (2016)
-
-He has had solo shows with:
-- **Gallery Zvono**, Belgrade
-- **EIKON Schauraum, Q21, MuseumsQuartier**, Vienna (2023)
-- **Automat Artspace**, Saarbrucken (2022)
-- **Eugster II Belgrade** (2020)
-- **Ravnikar Gallery**, Ljubljana (2019)
-- **Serbian Cultural Centre**, Paris (2018)
-
-Ćuk teaches at the University of Arts in Belgrade (Faculty of Applied Arts). He is a recipient of several awards including:
-- **Recognition Award**, MAK Museum Vienna
-- **Vladimir Velickovic Fund Award**
-- **Taiyuan Sculpture Symposium Award**
-
-He is also a **Contributing Art Editor** at *DSCENE Magazine*.
-
----
+Vuk Ćuk (1987) is a visual artist based in Belgrade, Serbia. He is
+interested in how capitalist logic, trends and technology shape both
+the human and natural world, examining new ways of living in
+contemporary society. He works across various media, such as sculpture
+(kinetic and static), installations, drawing, digital art, video and
+painting. His work was shown at NADA Miami 2024, Armory Show 2023,
+LISTE Artfair 2022, Belgrade Biennale 2021 - curated by CURA’s Ilaria
+Marotta and Andrea Baccin, Sequence Art Festival, Marshall House in
+Reykjavik, Iceland (2019), 57th Belgrade Biennale curated by Gunnar
+and Danielle Kvaran, Belgrade, Serbia (2018), China Art Museum in
+Shanghai (2017), Sugarcube Festival in New York (2016) and Taiyuan
+Sculpture Symposium, Taiyuan, China (2016). Ćuk has had solo shows in
+Belgrade with gallery ZVONO several times, EIKON Schauraum, Q21,
+MuseumsQuartier in Vienna (2023), Automat Artspace in Saarbrucken
+(2022), Eugster ll Belgrade (2020), Ljubljana with Ravnikar gallery
+(2019), as well as at the Serbian Cultural Centre in Paris (2018). He
+teaches at Belgrade’s University of Art (Faculty of Applied Arts) and
+is a recipient of MAK Museum Vienna’s Recognition Award, Vladimir
+Velickovic fund award, Taiyuan Sculpture Symposium award. He is
+contributing Art Editor at DSCENE Magazine.
 
 ## EDUCATION
 
 - Faculty of Applied Arts, Belgrade – Painting  
 - University of the Applied Arts, Vienna – Painting
-
----
 
 ## SOLO SHOWS
 
@@ -86,8 +75,6 @@ He is also a **Contributing Art Editor** at *DSCENE Magazine*.
 - *GRAND HALL*, Gallery Zvono, Belgrade  
 - *MOONWALKING*, Kunstlerhaus, Vienna
 
----
-
 ## GROUP SHOWS
 
 *(Selected)*
@@ -133,8 +120,6 @@ He is also a **Contributing Art Editor** at *DSCENE Magazine*.
 
 *(Full list includes exhibitions dating back to 2007)*
 
----
-
 ## RESIDENCIES
 
 - **2025**: D’PUGLIA, CASTRO, ITALY; WATERMELON RESIDENCY, ROMANIA  
@@ -142,7 +127,6 @@ He is also a **Contributing Art Editor** at *DSCENE Magazine*.
 - **2015**: CAFA Sculpture Symposium, Taiyuan, China  
 - **2012**: TERRA Symposium, Kikinda, Serbia
 
----
 
 ## AWARDS
 
@@ -151,7 +135,6 @@ He is also a **Contributing Art Editor** at *DSCENE Magazine*.
 - "Miodrag Vujacic Mirski" Painting Award  
 - Award for Sculpture, Taiyuan Sculpture Symposium
 
----
 
 ## COLLECTIONS
 
@@ -162,7 +145,6 @@ He is also a **Contributing Art Editor** at *DSCENE Magazine*.
 - Radix Collection, Belgrade  
 - Various private collections (Austria, Germany, Denmark, China, Slovenia, USA, Italy, Iceland, Switzerland, Russia, Serbia)
 
----
 
 ## PUBLIC COMMISSIONS
 
